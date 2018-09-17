@@ -34,4 +34,13 @@ public class Company {
 		return vatIdentificationNumber;
 	}
 
+	@Override
+	public String toString() {
+		return "Company{" +
+			"name='" + name + '\'' +
+			", domain='" + domain + '\'' +
+			", email='" + email + '\'' +
+			", vatIdentificationNumber='" + vatIdentificationNumber + '\'' +
+			'}';
+	}
 }

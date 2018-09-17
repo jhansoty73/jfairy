@@ -133,4 +133,27 @@ public class Person {
 	public Country getNationality() {
 		return nationality;
 	}
+
+	@Override
+	public String toString() {
+		return "Person{" +
+			"address=" + address +
+			", firstName='" + firstName + '\'' +
+			", middleName='" + middleName + '\'' +
+			", lastName='" + lastName + '\'' +
+			", email='" + email + '\'' +
+			", username='" + username + '\'' +
+			", password='" + password + '\'' +
+			", sex=" + sex +
+			", telephoneNumber='" + telephoneNumber + '\'' +
+			", dateOfBirth=" + dateOfBirth +
+			", age=" + age +
+			", company=" + company +
+			", companyEmail='" + companyEmail + '\'' +
+			", nationalIdentityCardNumber='" + nationalIdentityCardNumber + '\'' +
+			", nationalIdentificationNumber='" + nationalIdentificationNumber + '\'' +
+			", passportNumber='" + passportNumber + '\'' +
+			", nationality=" + nationality +
+			'}';
+	}
 }
