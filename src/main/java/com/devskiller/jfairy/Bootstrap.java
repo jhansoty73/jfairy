@@ -124,10 +124,19 @@ public class Bootstrap {
 		try {
 			code = LanguageCode.valueOf(locale.getLanguage().toUpperCase());
 		} catch (IllegalArgumentException e) {
-			LOG.warn("Uknown locale " + locale);
+			LOG.warn("Unknown locale " + locale);
 			code = LanguageCode.EN;
 		}
 
+		// TODO: Decide which class has the responsibility of handling locales and refactor this code
+		// By the time the code gets here the DataMaster has already been created with the
+		// specified Locale so the code below could lead to a split-brain condition where
+		// the DataMaster is created with a locale specific file and this code returns a
+		// differentXXFairyModule.
+		// There are a couple of such examples in the current implementation
+		// 1. For FR, the configuration is from jfairy_fr.yml but the code used is EsFairyModule
+		// 2. For IT, the configuration is from jfairy_it.yml but the code used is EnFairyModule
+		// The implementation may be functionally correct but is not clean
 		switch (code) {
 			case PL:
 				return new PlFairyModule(dataMaster, randomGenerator);
@@ -146,7 +155,7 @@ public class Bootstrap {
 			case KA:
 				return new KaFairyModule(dataMaster, randomGenerator);
 			default:
-				LOG.info("No data for your language - using EN");
+				LOG.info("No custom module defined for language {} - using the default EN", code);
 				return new EnFairyModule(dataMaster, randomGenerator);
 		}
 	}
