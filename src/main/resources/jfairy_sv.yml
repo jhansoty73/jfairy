@@ -27,3 +27,5 @@ data:
   country: ['Sverige']
 
   language: 'SV'
+
+  passport_number_format: '########'

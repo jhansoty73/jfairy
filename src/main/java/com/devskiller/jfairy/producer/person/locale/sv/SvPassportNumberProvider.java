@@ -6,6 +6,7 @@ import com.devskiller.jfairy.producer.person.PassportNumberProvider;
 
 /**
  * Swedish Passport Number (random number implementation)
+ * @deprecated Replaced by DefaultPassportNumberProvider
  */
 public class SvPassportNumberProvider implements PassportNumberProvider {
 

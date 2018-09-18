@@ -7,6 +7,7 @@ import com.devskiller.jfairy.producer.person.PassportNumberProvider;
 /**
  * @author graux
  * @since 26/04/2015
+ * @deprecated Replaced by DefaultPassportNumberProvider
  */
 public class EsPassportNumberProvider implements PassportNumberProvider {
 

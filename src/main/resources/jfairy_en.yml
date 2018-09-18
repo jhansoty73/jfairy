@@ -27,3 +27,5 @@ data:
   country: ['Canada', 'USA', 'Poland']
 
   language: 'EN'
+
+  passport_number_format: '??#######'

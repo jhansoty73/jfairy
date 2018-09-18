@@ -4,10 +4,7 @@ import com.devskiller.jfairy.data.DataMaster;
 import com.devskiller.jfairy.producer.RandomGenerator;
 import com.devskiller.jfairy.producer.VATIdentificationNumberProvider;
 import com.devskiller.jfairy.producer.company.locale.en.EnVATIdentificationNumberProvider;
-import com.devskiller.jfairy.producer.person.AddressProvider;
-import com.devskiller.jfairy.producer.person.NationalIdentificationNumberFactory;
-import com.devskiller.jfairy.producer.person.NationalIdentityCardNumberProvider;
-import com.devskiller.jfairy.producer.person.PassportNumberProvider;
+import com.devskiller.jfairy.producer.person.*;
 import com.devskiller.jfairy.producer.person.locale.NoNationalIdentificationNumberFactory;
 import com.devskiller.jfairy.producer.person.locale.en.EnAddressProvider;
 import com.devskiller.jfairy.producer.person.locale.en.EnNationalIdentityCardNumberProvider;
@@ -30,7 +27,7 @@ public class EnFairyModule extends FairyModule {
 		bind(NationalIdentityCardNumberProvider.class).to(EnNationalIdentityCardNumberProvider.class);
 		bind(VATIdentificationNumberProvider.class).to(EnVATIdentificationNumberProvider.class);
 		bind(AddressProvider.class).to(EnAddressProvider.class);
-		bind(PassportNumberProvider.class).to(EnPassportNumberProvider.class);
+		bind(PassportNumberProvider.class).to(DefaultPassportNumberProvider.class);
 	}
 
 }
