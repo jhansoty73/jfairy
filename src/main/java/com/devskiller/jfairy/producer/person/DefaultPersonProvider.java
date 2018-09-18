@@ -133,7 +133,15 @@ public class DefaultPersonProvider implements PersonProvider {
 		if (middleName != null) {
 			return;
 		}
-		middleName = baseProducer.trueOrFalse() ? dataMaster.getValuesOfType(FIRST_NAME, sex.name(), String.class) : "";
+		boolean hasMiddleName=baseProducer.trueOrFalse();
+		if (!hasMiddleName) { middleName=""; }
+		else {
+			boolean useMiddleInitial=baseProducer.trueOrFalse();
+			middleName=dataMaster.getValuesOfType(FIRST_NAME, sex.name(), String.class);
+			if (useMiddleInitial && !middleName.isEmpty()) {
+				middleName=middleName.substring(0,1);
+			}
+		}
 	}
 
 	@Override
